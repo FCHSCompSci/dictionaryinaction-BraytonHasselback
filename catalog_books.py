@@ -1,3 +1,7 @@
+## Brayton Hasselback
+## Dictionary(library)
+## 9.24.18
+
 library = []
 
 def make_book(title, author, genre, book_id):
@@ -12,6 +16,9 @@ def make_book(title, author, genre, book_id):
 
 book_id = 0
 
+name = input('What is your name? ')
+print('Welcome to the library %s' % (name))
+
 while True:
     interface_book = input("Do you want to [A]dd a new book, [R]emove a book, or [L]eave, or [C]heck the books in the library?")
     if interface_book == 'A':
@@ -22,4 +29,14 @@ while True:
         add_book2 = make_book(title, author, genre, book_id)
 
     if interface_book == 'C':
-        print(lbrary)
+        print(library)
+
+    if interface_book == 'R':
+        id_checker = input('What book ID will be removed? ')
+        for dictionary in library:
+            if dictionary['book_id'] == id_checker:
+               library.remove(dictionary)
+            print(library)
+
+    if interface_book == 'L':
+        exit()
